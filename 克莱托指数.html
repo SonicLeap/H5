@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>克莱托指数</title>
+	<style>
+	
+	</style>
+</head>
+<body>
+    <script>
+	var shengao,tizhong,feisou;
+	shengao=prompt("你的身高：（单位M）");
+	tizhong=prompt("你的体重：（单位Kg）");
+	feisou=tizhong/(shengao^2);
+	if(feisou<20){
+		alert("你瘦了");
+		}else if(feisou>25){
+		alert("你胖了");
+		}else{
+		alert("你的克莱托数值为:"+feisou+",属于正常。");
+		}
+	</script>
+</body>
+</html>
+        
