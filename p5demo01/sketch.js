@@ -5,7 +5,7 @@ function preload(){
 	pic =loadImage("images/huaji.png")
 }
 function setup() {
-	createCanvas(1080,1920);
+	createCanvas(720,1080);
 	
 }
 var posX=0;//位置
