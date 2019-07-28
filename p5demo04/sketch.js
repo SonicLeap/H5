@@ -54,7 +54,7 @@ function Ball(posX,posY,ballsize){
 	this.pos=createVector(posX,posY);		//创建向量作为pos属性的值
 	this.vel=p5.Vector.random2D();	
 	//创建vel属性给它 方向随机 单位长度的向量 
-	this.vel.setMag(random(2,6));	//设置向量的长度
+	this.vel.setMag(random(2,4));	//设置向量的长度
 	this.size=ballsize;
 	this.color=color(random(255),random(255),random(255));
 	this.update=function(){
