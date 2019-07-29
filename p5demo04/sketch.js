@@ -4,15 +4,15 @@ var coolDown=0;
 function setup() {
 	createCanvas(400,600);
 	background(0);
-	for(var i=0;i<20;i++){
-		balls.push(new Ball(width/2,height/2,30));		
+	for(var i=0;i<10;i++){
+		balls.push(new Ball(width/2,height/2,50));		
 	}
 	noStroke();		
 }
 
 
 function draw() {
-	background(0,20);//疑问？
+	background(0);
 	for(var i=0;i<balls.length;i++){	
 		balls[i].update();
 		balls[i].render();
@@ -41,6 +41,8 @@ function touchStarted(){
 			explode(i);		//传递编号
 			background(balls[i].color);
 			coolDown=60;
+		}
+	}
 }
 
 function explode(choseBallIndex){
