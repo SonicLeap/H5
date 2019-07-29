@@ -1,5 +1,6 @@
 
 var balls=[];
+var coolDown=0;
 function setup() {
 	createCanvas(400,600);
 	background(0);
@@ -16,29 +17,32 @@ function draw() {
 		balls[i].update();
 		balls[i].render();
 	}
+	if (coolDown>0){
+		coolDown-=1;
+	}
+	console.log(coolDown);
 }
 
 function mouseClicked(){
-	for (var i=0;i<balls.length;i++){
+	for(var i=0;i<balls.length;i++&&coolDown<=0){
 		var d=dist(balls[i].pos.x,balls[i].pos.y,mouseX,mouseY);
 		if (d<=balls[i].size*0.5){
 			explode(i);		//传递编号
-			backgroucd(balls[i].color);
-			
+			background(balls[i].color);
+			coolDown=60;
 		}
 	}
 	
 }
 function touchStarted(){
-	for (var i=0;i<balls.length;i++){
+	for(var i=0;i<balls.length;i++&&coolDown<=0){
 		var d=dist(balls[i].pos.x,balls[i].pos.y,mouseX,mouseY);
 		if (d<=balls[i].size*0.5){
 			explode(i);		//传递编号
-			backgroucd(balls[i].color);
-			
+			background(balls[i].color);
+			coolDown=60;
 		}
 	}
-	
 }
 
 function explode(choseBallIndex){
@@ -56,7 +60,7 @@ function Ball(posX,posY,ballsize){
 	this.pos=createVector(posX,posY);		//创建向量作为pos属性的值
 	this.vel=p5.Vector.random2D();	
 	//创建vel属性给它 方向随机 单位长度的向量 
-	this.vel.setMag(random(2,4));	//设置向量的长度
+	this.vel.setMag(random(1,2));	//设置向量的长度
 	this.size=ballsize;
 	this.color=color(random(255),random(255),random(255));
 	this.update=function(){
