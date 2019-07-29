@@ -28,7 +28,7 @@ function mouseClicked(){
 		var d=dist(balls[i].pos.x,balls[i].pos.y,mouseX,mouseY);
 		if ((d<=balls[i].size*0.5)&&(coolDown<=0)){
 			explode(i);	
-			background(255);
+			background(balls[i].color);
 			coolDown=60;
 		}
 	}
@@ -39,7 +39,7 @@ function touchStarted(){
 		var d=dist(balls[i].pos.x,balls[i].pos.y,mouseX,mouseY);
 		if ((d<=balls[i].size*0.5)&&(coolDown<=0)){
 			explode(i);	
-			background(255);
+			background(balls[i].color);
 			coolDown=60;
 		}
 	}
