@@ -23,6 +23,7 @@ function mouseClicked(){
 		var d=dist(balls[i].pos.x,balls[i].pos.y,mouseX,mouseY);
 		if (d<=balls[i].size*0.5){
 			explode(i);		//传递编号
+			backgroucd(255);
 			
 		}
 	}
