@@ -4,8 +4,8 @@ var coolDown=0;
 function setup() {
 	createCanvas(400,600);
 	background(0);
-	for(var i=0;i<10;i++){
-		balls.push(new Ball(width/2,height/2,50));		
+	for(var i=0;i<20;i++){
+		balls.push(new Ball(width/2,height/2,30));		
 	}
 	noStroke();		
 }
@@ -27,8 +27,8 @@ function mouseClicked(){
 	for(var i=0;i<balls.length;i++){
 		var d=dist(balls[i].pos.x,balls[i].pos.y,mouseX,mouseY);
 		if ((d<=balls[i].size*0.5)&&(coolDown<=0)){
-			explode(i);		//传递编号
-			background(balls[i].color);
+			explode(i);	
+			background(255);
 			coolDown=60;
 		}
 	}
@@ -38,8 +38,8 @@ function touchStarted(){
 	for(var i=0;i<balls.length;i++){
 		var d=dist(balls[i].pos.x,balls[i].pos.y,mouseX,mouseY);
 		if ((d<=balls[i].size*0.5)&&(coolDown<=0)){
-			explode(i);		//传递编号
-			background(balls[i].color);
+			explode(i);	
+			background(255);
 			coolDown=60;
 		}
 	}
@@ -48,9 +48,9 @@ function touchStarted(){
 function explode(choseBallIndex){
 	var posX=balls[choseBallIndex].pos.x;
 	var posY=balls[choseBallIndex].pos.y;
-	var size=balls[choseBallIndex].size*0.5;
+	var size=balls[choseBallIndex].size*0.3;
 	balls.splice(choseBallIndex,1);			//消失小球的编号，1个
-	for(var i=0;i<10;i++){
+	for(var i=0;i<20;i++){
 		balls.push(new Ball(posX,posY,size));
 	}
 }
@@ -60,7 +60,7 @@ function Ball(posX,posY,ballsize){
 	this.pos=createVector(posX,posY);		//创建向量作为pos属性的值
 	this.vel=p5.Vector.random2D();	
 	//创建vel属性给它 方向随机 单位长度的向量 
-	this.vel.setMag(random(1,2));	//设置向量的长度
+	this.vel.setMag(random(1,4));	//设置向量的长度
 	this.size=ballsize;
 	this.color=color(random(255),random(255),random(255));
 	this.update=function(){
