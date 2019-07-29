@@ -4,8 +4,8 @@ var coolDown=0;
 function setup() {
 	createCanvas(400,600);
 	background(0);
-	for(var i=0;i<10;i++){
-		balls.push(new Ball(width/2,height/2,50));		
+	for(var i=0;i<20;i++){
+		balls.push(new Ball(width/2,height/2,30));		
 	}
 	noStroke();		
 }
@@ -24,9 +24,9 @@ function draw() {
 }
 
 function mouseClicked(){
-	for(var i=0;i<balls.length;i++&&coolDown<=0){
+	for(var i=0;i<balls.length;i++){
 		var d=dist(balls[i].pos.x,balls[i].pos.y,mouseX,mouseY);
-		if (d<=balls[i].size*0.5){
+		if ((d<=balls[i].size*0.5)&&(coolDown<=0)){
 			explode(i);		//传递编号
 			background(balls[i].color);
 			coolDown=60;
@@ -35,14 +35,12 @@ function mouseClicked(){
 	
 }
 function touchStarted(){
-	for(var i=0;i<balls.length;i++&&coolDown<=0){
+	for(var i=0;i<balls.length;i++){
 		var d=dist(balls[i].pos.x,balls[i].pos.y,mouseX,mouseY);
-		if (d<=balls[i].size*0.5){
+		if ((d<=balls[i].size*0.5)&&(coolDown<=0)){
 			explode(i);		//传递编号
 			background(balls[i].color);
 			coolDown=60;
-		}
-	}
 }
 
 function explode(choseBallIndex){
