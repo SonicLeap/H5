@@ -4,8 +4,8 @@ var coolDown=0;
 function setup() {
 	createCanvas(400,600);
 	background(0);
-	for(var i=0;i<20;i++){
-		balls.push(new Ball(width/2,height/2,30));		
+	for(var i=0;i<10;i++){
+		balls.push(new Ball(width/2,height/2,50));		
 	}
 	noStroke();		
 }
