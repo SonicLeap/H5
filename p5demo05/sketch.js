@@ -3,7 +3,9 @@ var balls=[];
 var coolDown=0;
 var mic;
 function setup() {
-	createCanvas(400,600);
+	var c;
+	c=createCanvas(400,600);
+	c.parent("p5-box");
 	background(0);
 	for(var i=0;i<10;i++){
 		balls.push(new Ball(width/2,height/2,50));		
@@ -30,7 +32,10 @@ function draw() {
 	}
 	console.log(lvl);
 //	console.log(coolDown);
+	document.getElementById("demo").innerHTML=lvl;
 }
+
+
 
 function mouseClicked(){
 	for(var i=0;i<balls.length;i++){
