@@ -20,7 +20,7 @@
                     font-size: 0.8em;
             }
             #keai{
-	            position:relative;
+	            position:fixed;
 	            animation-name:myfirst;
 	            animation-duration:5s;
 	            animation-timing-function:linear;
@@ -31,11 +31,8 @@
                 }
                 @keyframes myfirst
                 {
-                	0%   {left:0px; top:0px;}
-                	25%  {left:200px; top:0px;}
-                	50%  {left:200px; top:200px;}
-                	75%  { left:0px; top:200px;}
-                	100% { left:0px; top:0px;}
+                	0%   {left:random(1000)px; top:random(1000)px;}
+                	100% { left:random(1000)px; top:random(1000)px;}
                 }
         </style>
 </head>
