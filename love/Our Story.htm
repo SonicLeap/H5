@@ -15,9 +15,28 @@
 		<script type="text/javascript" src="./Our Story_files/functions.js.下载" charset="utf-8"></script>
 		<script type="text/javascript" src="./Our Story_files/love.min.js.下载" charset="utf-8"></script>
         <style type="text/css">
-            .STYLE1{color: #666666;
+            .STYLE1{
+                color: #666666;
                     font-size: 0.8em;
             }
+            #keai{
+	            position:relative;
+	            animation-name:myfirst;
+	            animation-duration:5s;
+	            animation-timing-function:linear;
+	            animation-delay:2s;
+	            animation-iteration-count:infinite;
+	            animation-direction:alternate;
+	            animation-play-state:running;
+                }
+                @keyframes myfirst
+                {
+                	0%   {left:0px; top:0px;}
+                	25%  {left:200px; top:0px;}
+                	50%  {left:200px; top:200px;}
+                	75%  { left:0px; top:200px;}
+                	100% { left:0px; top:0px;}
+                }
         </style>
 </head>
     <body>
@@ -40,7 +59,7 @@
             </div>
             
         </div>
-    
+        <div id="keai"><img src="./top_page_btn07.png" alt="123"></div>
    
 
     <script>
