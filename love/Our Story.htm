@@ -3,7 +3,7 @@
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>致喜欢的女孩</title>
-		
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="./Our Story_files/default.css">
 		<script type="text/javascript" src="./Our Story_files/jquery.js.下载"></script>
 		<script type="text/javascript" src="./Our Story_files/jscex.js.下载"></script>
@@ -21,24 +21,14 @@
             }
             #keai{
 	            position:fixed;
-	            animation-name:myfirst;
-	            animation-duration:10s;
-	            animation-timing-function:linear;
-	            animation-delay:2s;
-	            animation-iteration-count:infinite;
-	            animation-direction:alternate;
-	            animation-play-state:running;
-                }
-                @keyframes myfirst
-                {
-                	0%   {left:random(0,1000)px; top:random(0,800)px;}
-                	100% { left:random(0,1000)px; top:random(0,800)px;}
+                left:50px;
+                top:50px;
                 }
         </style>
 </head>
     <body>
-			<audio autoplay="autopaly">
-					<source src="小幸运.mp3" audio="" mp3"="">
+			<audio autoplay="autopaly" id="mp3">
+					<source src="专属温柔 (剧情版).mp3" audio="" mp3="">
 			</audio>
         <div id="main">
     <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&amp;brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
@@ -56,7 +46,7 @@
             </div>
             
         </div>
-        <div id="keai"><img src="./top_page_btn07.png" alt="123"></div>
+        <div id="keai"><button onclick="getElementById('mp3').pause()" class="btn"><img src="./top_page_btn07.png" alt="123"></button></div>
    
 
     <script>
@@ -77,8 +67,8 @@
         var opts = {
             seed: {
                 x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
+                color: "rgb(250, 26, 37)",
+                scale: 3
             },
             branch: [
                 [535, 680, 570, 250, 500, 200, 30, 100, [
