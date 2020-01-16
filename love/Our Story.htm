@@ -39,7 +39,7 @@
 </head>
     <body>
 			<audio autoplay="autopaly" id="mp3">
-					<source src="专属温柔 (剧情版).mp3" audio="" mp3="">
+					<source src="橙光音乐-单身革命.mp3" audio="" mp3="">
 			</audio>
         <div id="main">
     <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&amp;brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
@@ -57,12 +57,12 @@
             </div>
             
         </div>
-        <div id="keai">
+        <!-- <div id="keai">
             <img src="2.png" alt="123"  onclick="getElementById('mp3').pause()">
         </div>
         <div id="keai2">
             <img src="3.png" alt="123"  onclick="getElementById('mp3').play()">
-        </div>
+        </div> -->
    
 
     <script>
@@ -86,34 +86,34 @@
                 color: "rgb(250, 26, 37)",
                 scale: 3
             },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
+            // branch: [
+            //     [535, 680, 570, 250, 500, 200, 30, 100, [
+            //         [540, 500, 455, 417, 340, 400, 13, 100, [
+            //             [450, 435, 434, 430, 394, 395, 2, 40]
+            //         ]],
+            //         [550, 445, 600, 356, 680, 345, 12, 100, [
+            //             [578, 400, 648, 409, 661, 426, 3, 80]
+            //         ]],
+            //         [539, 281, 537, 248, 534, 217, 3, 40],
+            //         [546, 397, 413, 247, 328, 244, 9, 80, [
+            //             [427, 286, 383, 253, 371, 205, 2, 40],
+            //             [498, 345, 435, 315, 395, 330, 4, 60]
+            //         ]],
+            //         [546, 357, 608, 252, 678, 221, 6, 100, [
+            //             [590, 293, 646, 277, 648, 271, 2, 80]
+            //         ]]
+            //     ]] 
+            // ],
+            // bloom: {
+            //     num: 700,
+            //     width: 1080,
+            //     height: 650,
+            // },
+            // footer: {
+            //     width: 1200,
+            //     height: 5,
+            //     speed: 10,
+            // }
         }
 
         var tree = new Tree(canvas[0], width, height, opts);
@@ -170,18 +170,18 @@
         }));
 
         var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
+            tree.snapshot("p1", 250, 0, 610, 680);
+            while (tree.move("p1", 250, 0)) {
+                // foot.draw();
                 $await(Jscex.Async.sleep(10));
             }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
+            // foot.draw();
+            tree.snapshot("p2", 250, 0, 610, 680);
 
             // 会有闪烁不得意这样做, (＞﹏＜)
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
             canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
+            $await(Jscex.Async.sleep(350));
             canvas.css("background", "none");
         }));
 
@@ -190,7 +190,7 @@
             while (true) {
                 tree.ctx.clearRect(0, 0, width, height);
                 tree.jump();
-                foot.draw();
+                // foot.draw();
                 $await(Jscex.Async.sleep(25));
             }
         }));
@@ -212,7 +212,7 @@
         }));
 
         var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
+            // $await(seedAnimate());
             $await(growAnimate());
             $await(flowAnimate());
             $await(moveAnimate());
